@@ -3,8 +3,8 @@ import "./ProductCard.css";
 const ProductCard = ({
   product,
   onViewDetails,
-  // onToggleFavorite,
-  // isFavorite,
+  onToggleFavorite,
+  isFavorite,
 }) => {
   return (
     <div className="product-card">
@@ -22,12 +22,12 @@ const ProductCard = ({
           >
             Xem chi tiết
           </button>
-          {/* <button
+          <button
             className={`favorite-btn ${isFavorite ? "active" : ""}`}
-            onClick={() => onToggleFavorite(product)}
+            onClick={() => onToggleFavorite(product.id)}
           >
             ♥
-          </button> */}
+          </button>
         </div>
       </div>
     </div>

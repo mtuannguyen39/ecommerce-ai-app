@@ -12,6 +12,7 @@ const Header = ({ currentPage, setCurrentPage }) => {
             </li>
             <li>
               <a onClick={() => setCurrentPage("favorites")}>Yêu thích</a>
+              {/* <a href="/favorites">Yêu thích</a> */}
             </li>
             <li>
               <a onClick={() => setCurrentPage("history")}>Lịch sử</a>
