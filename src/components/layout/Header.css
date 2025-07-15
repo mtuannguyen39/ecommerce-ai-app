@@ -27,6 +27,8 @@
 
 .nav-links a {
   color: white;
+  font-weight: 600;
+  font-size: 17px;
   text-decoration: none;
   transition: opacity 0.3s;
   cursor: pointer;
