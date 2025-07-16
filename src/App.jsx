@@ -11,12 +11,12 @@ import SearchBar from "./components/search/SearchBar";
 import FilterBar from "./components/search/FilterBar";
 
 import AISuggestions from "./components/suggestion/AISuggestions";
+import AIChat from "./components/suggestion/AIChat";
 
 import ProductCard from "./components/product/ProductCard";
 import ProductModal from "./components/product/ProductModal";
 
-import Favorites from "./pages/Favorites";
-import History from "./pages/History";
+import { MessageCircle } from "lucide-react";
 
 import "./App.css";
 
@@ -38,6 +38,7 @@ const App = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState(null);
+  const [showChat, setShowChat] = useState(false);
 
   // Filter products based on searchTerm and Filters
   const filteredProducts = mockProducts.filter((product) => {
@@ -68,6 +69,7 @@ const App = () => {
       product,
       ...viewHistory.filter((p) => p.id !== product.id),
     ].slice(0, 10);
+    setViewHistory(newHistory);
     localStorage.setItem("viewHistory", JSON.stringify(newHistory));
   };
 
@@ -144,12 +146,18 @@ const App = () => {
                 setSearchTerm={setSearchTerm}
                 onSearch={() => {}}
               />
-              <FilterBar
-                priceFilter={priceFilter}
-                setPriceFilter={setPriceFilter}
-                categoryFilter={categoryFilter}
-                setCategoryFilter={setCategoryFilter}
-              />
+              <div className="filter-container">
+                <FilterBar
+                  priceFilter={priceFilter}
+                  setPriceFilter={setPriceFilter}
+                  categoryFilter={categoryFilter}
+                  setCategoryFilter={setCategoryFilter}
+                />
+                <button onClick={() => setShowChat(true)} className="chat-btn">
+                  <MessageCircle size={16} />
+                  <span className="chat-text">AI Tu Van</span>
+                </button>
+              </div>
             </div>
 
             <button
@@ -202,15 +210,17 @@ const App = () => {
               💖 Danh sách yêu thích
             </h2>
             {favoriteProducts.length > 0 ? (
-              favoriteProducts.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  onViewDetails={handleViewDetails}
-                  onToggleFavorite={handleToggleFavorite}
-                  isFavorite={true}
-                />
-              ))
+              <div className="product-grid">
+                {favoriteProducts.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    onViewDetails={handleViewDetails}
+                    onToggleFavorite={handleToggleFavorite}
+                    isFavorite={true}
+                  />
+                ))}
+              </div>
             ) : (
               <div className="empty-state">
                 <h3>Chưa có sản phẩm yêu thích</h3>
@@ -218,6 +228,40 @@ const App = () => {
                   Hãy thêm các khóa học bạn quan tâm vào danh sách yêu thích
                   nhé!
                 </p>
+                <button
+                  className="btn-primary"
+                  onClick={() => setCurrentPage("home")}
+                  style={{ marginTop: "1rem" }}
+                >
+                  Khám phá khóa học
+                </button>
+              </div>
+            )}
+          </>
+        )}
+
+        {/* History Page */}
+        {currentPage === "history" && (
+          <>
+            <h2 style={{ margin: "2rem 0", fontSize: "1.8rem", color: "#333" }}>
+              📚 Lịch sử xem
+            </h2>
+            {viewHistory.length > 0 ? (
+              <div className="product-grid">
+                {viewHistory.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    onViewDetails={handleViewDetails}
+                    onToggleFavorite={handleToggleFavorite}
+                    isFavorite={favorites.includes(product.id)}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="empty-state">
+                <h3>Chưa có lịch sử xem</h3>
+                <p>Các sản phẩm bạn đã xem sẽ xuất hiện ở đây.</p>
                 <button
                   className="btn-primary"
                   onClick={() => setCurrentPage("home")}
@@ -237,6 +281,8 @@ const App = () => {
           onClose={() => setSelectedProduct(null)}
         />
       )}
+
+      <AIChat isOpen={showChat} onClose={() => setShowChat(false)} />
 
       {toast && (
         <Toast
