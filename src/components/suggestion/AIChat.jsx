@@ -58,7 +58,7 @@ const AIChat = ({ isOpen, onClose }) => {
   return (
     <div className="ai-container">
       <div className="ai-header">
-        <h3 className="ai-title">AI Tu van</h3>
+        <h3 className="ai-title">AI Chat box</h3>
         <button className="ai-btn" onClick={onClose}>
           <X size={18} />
         </button>
