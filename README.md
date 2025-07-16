@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Ecommerce AI Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the **Ecommerce AI Application** repository! This project aims to demonstrate a modern e-commerce platform integrated with AI capabilities, providing a seamless and intelligent shopping experience.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+* **Product Catalog:** Browse a diverse range of products with detailed descriptions.
+* **AI-Powered Chatbot:** Integrated AI assistant for customer support and personalized recommendations.
+* **Responsive Design:** Optimized for various devices, from desktop to mobile.
+* **Product History Management:** Track product history and status.
 
-### `npm start`
+## Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Experience the live application deployed on Vercel:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[**Live Demo on Vercel**](https://ecommerce-ai-app.vercel.app/)
 
-### `npm test`
+### Demo Screenshot
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Home Page
+<img width="1863" height="966" alt="Screenshot from 2025-07-16 15-43-42" src="https://github.com/user-attachments/assets/2e6e6284-0417-4f88-bb04-162bd1c89ca3" />
 
-### `npm run build`
+#### Favorite Page
+<img width="1863" height="966" alt="Screenshot from 2025-07-16 15-44-06" src="https://github.com/user-attachments/assets/b4d08905-869c-407d-89c9-468f850b65fa" />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### History Page
+<img width="1863" height="966" alt="Screenshot from 2025-07-16 15-44-34" src="https://github.com/user-attachments/assets/0f92180b-47c7-427f-8377-f8ba8441e106" />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
+This project is built using a modern web development stack:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* **Frontend:**
+    * ReactJS
+    * Lucide React Icon
+    * Mobile Reponsive
+* **AI Integration:**
+    * Simulate AI
+    * AI Chat Box
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+Ensure you have the following installed on your system:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* [Node.js](https://nodejs.org/) (LTS version recommended)
+* [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installation
 
-### Code Splitting
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/mtuannguyen39/ecommerce-ai-app.git](https://github.com/mtuannguyen39/ecommerce-ai-app.git)
+    cd ecommerce-ai-app
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2.  **Install dependencies:**
+    If using npm:
+    ```bash
+    npm install
+    ```
+    Or if using Yarn:
+    ```bash
+    yarn install
+    ```
+    
+### Running the Application
 
-### Analyzing the Bundle Size
+To run the application in development mode:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+If using npm:
+```bash
+npm start
+```
 
-### Making a Progressive Web App
+Or ìf using yarn:
+```bash
+yarn start
+```
+The application will typically be accessible at http://localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Building for Production
 
-### Advanced Configuration
+To build the application for production deployment:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+If using npm: 
+```bash
+npm run build
+```
 
-### Deployment
+Or if using Yarn:
+```bash
+yarn build
+```
+Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+If you have any questions, feel free to reach out:
 
-### `npm run build` fails to minify
+    Your Name/GitHub Username: mtuannguyen39
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Email: mtuan.nguyen39@gmail.com
